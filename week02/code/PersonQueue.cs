@@ -13,12 +13,12 @@ public class PersonQueue
     /// <param name="person">The person to add</param>
     public void Enqueue(Person person)
     {
-        _queue.Insert(0, person);
+        _queue.Add(person); // adding to the end of the list
     }
 
     public Person Dequeue()
     {
-        var person = _queue[0];
+        var person = _queue[0]; // removing from the front of the list
         _queue.RemoveAt(0);
         return person;
     }
