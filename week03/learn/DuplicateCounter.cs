@@ -24,7 +24,22 @@
 
     private static int CountDuplicates(int[] data)
     {
-        // Add code here.
-        return 0;
+        // Going to loop through the data and check for membership in the set.
+        // If it is yes, then increase the counter (of the number of duplicates), otherwise add it to the set.
+        var set = new HashSet<int>();
+        var duplicates = 0;
+
+        foreach (var item in data)
+        {
+            if (set.Contains(item))
+            {
+                duplicates++;
+            }
+            else
+            {
+                set.Add(item);
+            }
+        }
+        return duplicates;
     }
 }
